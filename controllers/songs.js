@@ -4,8 +4,13 @@ exports.getSongs =  (req, res) => {
     try {
         db.PlayList.findAll({
             include:[{
-                model: db.Songs, through: { attributes: [] }
-            }],
+                model: db.Songs, through: { attributes: [] },
+                include:[{
+                        model: db.Genre 
+                }]
+            },
+            
+        ],
             where: {
                 id: req.query.id
             }
