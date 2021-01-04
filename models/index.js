@@ -4,10 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-const env = 'development';
+const env = 'production';
 const config = require('../config/config.js')[env];
 const mysql = require('mysql2/promise');
-const importer = require('node-mysql-importer')
 const db = {};
 
 let sequelize;
